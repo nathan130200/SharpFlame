@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Net.Mime;
 using System.Threading;
 using System.Threading.Tasks;
@@ -230,29 +231,30 @@ namespace SharpFlame.Gui.Forms
 	        help.Items.Add(new Actions.AboutCommand());
 
 			// optional, removes empty submenus and duplicate separators
-			// menu.Items.Trim();
+			//menu.Items.Trim();
 
-	        var testing = Menu.Items.GetSubmenu("TESTING");
-	        testing.Items.GetSubmenu("CMD1").Click += (sender, args) =>
-	            {
-	                this.ViewInfo.LookAtTile(new XYInt(1, 1));
-	            };
-	        testing.Items.GetSubmenu("CMD2 - ViewPos").Click += (sender, args) =>
-	            {
-	                this.ViewInfo.ViewPosChange(new XYZInt(1024, 1024, 1024));
-	            };
-            testing.Items.GetSubmenu("CMD3 - Check Screen Calculation").Click += (sender, args) =>
-            {
-                var posWorld = new WorldPos();
-                this.ViewInfo.ScreenXyGetTerrainPos(new XYInt(500, 1000), ref posWorld);
-            };
-            testing.Items.GetSubmenu("CMD4 - MousePos").Click += (sender, args) =>
-                {
-                    this.ViewInfo.MouseOver = new ViewInfo.clsMouseOver();
-                    this.ViewInfo.MouseOver.ScreenPos.X = 500;
-                    this.ViewInfo.MouseOver.ScreenPos.Y = 1000;
-                    this.ViewInfo.MouseOverPosCalc();
-                };
+	        //var testing = Menu.Items.GetSubmenu("Helpers", 99);
+
+	        //testing.Items.GetSubmenu("Look At Tile").Click += (sender, args) =>
+	        //    {
+	        //        this.ViewInfo.LookAtTile(new XYInt(1, 1));
+	        //    };
+	        //testing.Items.GetSubmenu("Set View Position").Click += (sender, args) =>
+	        //    {
+	        //        this.ViewInfo.ViewPosChange(new XYZInt(1024, 1024, 1024));
+	        //    };
+         //   testing.Items.GetSubmenu("CMD3 - Check Screen Calculation").Click += (sender, args) =>
+         //   {
+         //       var posWorld = new WorldPos();
+         //       this.ViewInfo.ScreenXyGetTerrainPos(new XYInt(500, 1000), ref posWorld);
+         //   };
+         //   testing.Items.GetSubmenu("CMD4 - MousePos").Click += (sender, args) =>
+         //       {
+         //           this.ViewInfo.MouseOver = new ViewInfo.clsMouseOver();
+         //           this.ViewInfo.MouseOver.ScreenPos.X = 500;
+         //           this.ViewInfo.MouseOver.ScreenPos.Y = 1000;
+         //           this.ViewInfo.MouseOverPosCalc();
+         //       };
             
 		}
 	}

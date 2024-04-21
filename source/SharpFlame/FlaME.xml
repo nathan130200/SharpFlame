@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SharpFlame</name>
+    </assembly>
+    <members>
+        <member name="E:SharpFlame.Gui.Controls.CustomButton.Click">
+            <summary>
+            Event to handle when the user clicks the button
+            </summary>
+        </member>
+        <member name="M:SharpFlame.Gui.Controls.CustomButton.OnClick(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:SharpFlame.Gui.Controls.CustomButton.Click"/> event
+            </summary>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="P:SharpFlame.Gui.Sections.MapPanel.Logger">
+            <summary>
+            These get injected by Ninject over the constructor.
+            </summary>
+        </member>
+        <member name="M:SharpFlame.Gui.Sections.TextureTab.OnLoadComplete(System.EventArgs)">
+            <summary>
+            Sets the Bindings to uiOptions.Textures;
+            </summary>
+        </member>
+        <member name="M:SharpFlame.Gui.Sections.TextureTab.TextureView_OnGLControlInitialized(System.Object,System.EventArgs)">
+            <summary>
+            Ons the GL control initialized.
+            </summary>
+            <param name="o">Not used.</param>
+            <param name="e">Not used.</param>
+        </member>
+        <member name="T:SharpFlame.Maths.Angles.AnglePY">
+            <summary>
+            Angle Pitch, Yaw. Values in radians
+            </summary>
+        </member>
+        <member name="F:SharpFlame.Maths.Angles.AnglePY.Yaw">
+            <summary>
+            With respect to the ViewAngleMatrix, typical values range from -Pi (counter-clockwise) to Pi (clockwise).
+            Or, if you prefer from zero to 180 deg (clockwise) and zero to -180 (counter-clockwise)
+            </summary>
+        </member>
+        <member name="T:SharpFlame.Maths.Angles.AngleRPY">
+            <summary>
+            Angle Roll, Pitch, Yaw. Values in radians.
+            </summary>
+        </member>
+        <member name="M:SharpFlame.Settings.KeyboardManager.RegisterUpdate(System.String,Eto.Forms.Keys,System.Boolean)">
+            <summary>
+            Updates the specified Key.
+            </summary>
+            <param name="name">Name.</param>
+            <param name="etoKey">Key.</param>
+        </member>
+        <member name="P:SharpFlame.Util.clsTileType.Text">
+            <summary>
+            Implements IListItem, this is for the eto GUI.
+            </summary>
+            <value>The text.</value>
+        </member>
+        <member name="P:SharpFlame.Util.clsTileType.Key">
+            <summary>
+            Implements IListItem, this is for the eto GUI.
+            </summary>
+            <value>The text.</value>
+        </member>
+        <member name="P:SharpFlame.App.StatusDialog">
+            <summary>
+            Holder for the Status form.
+            </summary>
+            <value>The status dialog.</value>
+        </member>
+        <member name="P:SharpFlame.App.Kernel">
+            <summary>
+            The Ninject Kernel
+            </summary>
+            <value>The kernel.</value>
+        </member>
+        <member name="T:SharpFlame.Infrastructure.EventBrokerExtensionMethods">
+            <summary>
+            Extension methods for registering objects on the event broker.
+            </summary>
+        </member>
+        <member name="M:SharpFlame.Infrastructure.EventBrokerExtensionMethods.RegisterOnEventBroker``1(Ninject.Syntax.IBindingOnSyntax{``0},System.String)">
+            <summary>
+            Defines that the object created by the binding shall be registered on the specified event broker.
+            </summary>
+            <typeparam name="T">The type of the binding.</typeparam>
+            <param name="syntax">The syntax.</param>
+            <param name="eventBrokerName">Name of the event broker.</param>
+            <returns>The syntax.</returns>
+        </member>
+        <member name="M:SharpFlame.Infrastructure.EventBrokerExtensionMethods.RegisterOnGlobalEventBroker``1(Ninject.Syntax.IBindingOnSyntax{``0})">
+            <summary>
+            Defines that the object created by the binding shall be registered on the default global event broker.
+            </summary>
+            <typeparam name="T">The type of the binding.</typeparam>
+            <param name="syntax">The syntax.</param>
+            <returns>The syntax.</returns>
+        </member>
+        <member name="M:SharpFlame.Infrastructure.EventBrokerExtensionMethods.AddGlobalEventBroker(Ninject.Syntax.IBindingRoot,System.String)">
+            <summary>
+            Adds a global event broker to the kernel.
+            </summary>
+            <param name="bindingRoot">The binding root.</param>
+            <param name="eventBrokerName">Name of the event broker.</param>
+        </member>
+        <member name="M:SharpFlame.Infrastructure.EventBrokerExtensionMethods.OwnsEventBroker``1(Ninject.Syntax.IBindingOnSyntax{``0},System.String)">
+            <summary>
+            Defines that the object created by a binding owns an event broker.
+            Object created in the object tree below this binding can use this event broker.
+            </summary>
+            <typeparam name="T">The type of the binding.</typeparam>
+            <param name="syntax">The syntax.</param>
+            <param name="eventBrokerName">Name of the event broker.</param>
+            <returns>The syntax</returns>
+        </member>
+        <member name="M:SharpFlame.Infrastructure.EventBrokerExtensionMethods.WhenTargetNamed``1(Ninject.Syntax.IBindingWhenSyntax{``0},System.String)">
+            <summary>
+            Condition that matches when the target has the given name.
+            </summary>
+            <typeparam name="T">The type of the binding.</typeparam>
+            <param name="syntax">The syntax.</param>
+            <param name="name">The name.</param>
+            <returns>The syntax to define more things for the binding.</returns>
+        </member>
+        <member name="T:SharpFlame.Infrastructure.EventBrokerModule">
+            <summary>
+            Module for the event broker extension.
+            </summary>
+        </member>
+        <member name="F:SharpFlame.Infrastructure.EventBrokerModule.DefaultGlobalEventBrokerName">
+            <summary>
+            The name of the default global event broker
+            </summary>
+        </member>
+        <member name="M:SharpFlame.Infrastructure.EventBrokerModule.Load">
+            <summary>
+            Loads the module into the kernel.
+            </summary>
+        </member>
+        <member name="M:SharpFlame.Infrastructure.EventBrokerModule.VerifyRequiredModulesAreLoaded">
+            <summary>
+            Called after loading the modules. A module can verify here if all other required modules are loaded.
+            </summary>
+        </member>
+        <member name="T:SharpFlame.ViewInfo">
+            <summary>
+            Seems like this is the map user control class.
+            </summary>
+        </member>
+        <member name="M:SharpFlame.ViewInfo.RelativeToViewAngle(SharpFlame.Mapping.Tiles.TileOrientation)">
+            <summary>
+            Given the current ViewAngleMatrix:Yaw, this method ensures the correct tile orientation 
+            respecting where the view camera is oriented. 
+            </summary>
+            <param name="currentOrientation"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SharpFlame.MouseTools.TerrainMode">
+            <summary>
+            DO NOT Change: Enumeration of the terrain modes.
+            If you change also change the UI (Sections/TextureTab.cs -> 
+            </summary>
+        </member>
+        <member name="P:SharpFlame.MouseTools.Textures.TilesetNum">
+            <summary>
+            Index of the selected Tileset
+            </summary>
+        </member>
+        <member name="P:SharpFlame.MouseTools.Textures.SelectedTile">
+            <summary>
+            Gets or sets the number of the selected tile/texture.
+            </summary>
+            <value>The selected tile.</value>
+        </member>
+    </members>
+</doc>
